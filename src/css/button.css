@@ -1,0 +1,9 @@
+button {
+  display: flex;
+  padding: 0.8rem 1rem;
+  border-radius: 0.3rem;
+  outline: none;
+  background-color: var(--secondary);
+  border: 1px solid var(--border);
+  cursor: pointer;
+}

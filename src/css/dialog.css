@@ -1,0 +1,76 @@
+dialog-element {
+  position: fixed;
+  inset: 0;
+  width: 500px;
+  margin: auto;
+  overflow: auto;
+  padding: 0;
+  opacity: 0;
+  border-radius: 0.4rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.08);
+  transition: opacity 0.5s, transform 0.2s, display 0.5s;
+  transition-behavior: allow-discrete;
+
+  &::backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    backdrop-filter: blur(1px);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &:popover-open {
+    opacity: 1;
+
+    @starting-style {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+
+  &>dialog-header {
+    display: block;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--border);
+
+    &>h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    &>button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      filter: grayscale(var(--filter));
+      outline: 0;
+    }
+  }
+
+  &>dialog-body {
+    display: inline-block;
+    position: relative;
+    margin: 1rem;
+    height: 100px;
+  }
+
+  &>dialog-footer {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.5em;
+    padding: 0.8rem 1rem;
+    border-top: 1px solid var(--border);
+
+    &>button {
+      padding: 0.6rem 1.3rem;
+    }
+  }
+}
