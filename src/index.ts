@@ -1,3 +1,1 @@
-(() => {
-  console.log('loaded')
-})()
+import './components/dialog.element'

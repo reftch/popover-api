@@ -1,4 +1,4 @@
-dialog-element {
+dialog {
   position: fixed;
   inset: 0;
   width: 500px;
@@ -23,7 +23,7 @@ dialog-element {
     background-color: rgba(0, 0, 0, 0.5);
   }
 
-  &:popover-open {
+  &[open] {
     opacity: 1;
 
     @starting-style {
@@ -31,46 +31,46 @@ dialog-element {
       transform: scale(0);
     }
   }
+}
 
-  &>dialog-header {
-    display: block;
-    align-items: center;
-    padding: 0.8rem 1rem;
-    border-bottom: 1px solid var(--border);
+dialog-header {
+  display: block;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
 
-    &>h2 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
-
-    &>button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      filter: grayscale(var(--filter));
-      outline: 0;
-    }
+  &>h2 {
+    margin: 0;
+    font-size: 1.2rem;
   }
 
-  &>dialog-body {
-    display: inline-block;
-    position: relative;
-    margin: 1rem;
-    height: 100px;
+  &>button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    filter: grayscale(var(--filter));
+    outline: 0;
   }
+}
 
-  &>dialog-footer {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 0.5em;
-    padding: 0.8rem 1rem;
-    border-top: 1px solid var(--border);
+dialog-body {
+  display: inline-block;
+  position: relative;
+  margin: 1rem;
+  height: 100px;
+}
 
-    &>button {
-      padding: 0.6rem 1.3rem;
-    }
+dialog-footer {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.5em;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--border);
+
+  &>button {
+    padding: 0.6rem 1.3rem;
   }
 }

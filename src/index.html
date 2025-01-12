@@ -12,17 +12,34 @@
 </head>
 
 <body>
-  <button popovertarget="mypopover">Toggle the popover</button>
-  <dialog-element id="mypopover" popover>
+  <button id="popover-btn" popovertarget="mypopover">Toggle the popover</button>
+
+  <dialog-element target="mydialog">
+    <button role="open">Open dialog</button>
+  </dialog-element>
+
+  <popover-element id="mypopover" popover>
     <dialog-header>
       <button popovertarget="mypopover" popovertargetaction="hide">❌</button>
-      <h2>Popover Dialog</h2>
+      <h2>Popover</h2>
     </dialog-header>
     <dialog-body> Popover content </dialog-body>
     <dialog-footer>
       <button popovertarget="mypopover">Close</button>
     </dialog-footer>
-  </dialog-element>
+  </popover-element>
+
+  <dialog id="mydialog">
+    <dialog-header>
+      <button role="close">❌</button>
+      <h2>Modal Dialog</h2>
+    </dialog-header>
+    <dialog-body> Dialog content </dialog-body>
+    <dialog-footer>
+      <button role="close">Close</button>
+    </dialog-footer>
+  </dialog>
+
 </body>
 
 </html>

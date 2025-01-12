@@ -1,0 +1,32 @@
+popover-element {
+  position: fixed;
+  inset: 0;
+  width: 500px;
+  margin: auto;
+  overflow: auto;
+  padding: 0;
+  opacity: 0;
+  border-radius: 0.4rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.08);
+  transition: opacity 0.5s, transform 0.2s, display 0.5s;
+  transition-behavior: allow-discrete;
+
+  &::backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &:popover-open {
+    opacity: 1;
+
+    @starting-style {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+}

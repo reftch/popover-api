@@ -2,8 +2,18 @@ button {
   display: flex;
   padding: 0.8rem 1rem;
   border-radius: 0.3rem;
-  outline: none;
+  /* outline: none; */
   background-color: var(--secondary);
   border: 1px solid var(--border);
   cursor: pointer;
+}
+
+button:focus {
+  outline-offset: 0.1rem;
+  outline-color: var(--border);
+  outline-width: 0.1rem;
+}
+
+button#popover-btn {
+  margin-bottom: 1rem;
 }

@@ -5,7 +5,7 @@ esbuild:
   --bundle --watch \
   --outdir=${OUTDIR} --servedir=${OUTDIR} \
   --loader:.html=copy \
-  --inject:src/livereload.ts
+  --inject:src/livereload.js
 
 build:
 	npx -yes esbuild src/index.html src/index.ts src/styles.css \
@@ -16,7 +16,7 @@ prod:
 	npx --yes http-server public -c-1
 			
 clean:
-	rm -rf public/index.html public/index.js public/styles.css 			
+	rm -rf public/index.html public/index.js public/styles.css
 
 dev:
 	make -j1 esbuild
